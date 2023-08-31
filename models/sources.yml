@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: public
+    database: mydemo
+    schema: public
+    tables:
+      - name: _airbyte_raw_sessionlogs
+
