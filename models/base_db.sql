@@ -1,0 +1,1 @@
+SELECT _airbyte_data ->> 'userid' as userid, ((TIMESTAMP 'epoch' + (_airbyte_data ->> 'sessionStart')::integer * INTERVAL '1 second') AT TIME ZONE 'UTC')::DATE as date FROM {{ source('public', '_airbyte_raw_sessionlogs') }} where  _airbyte_data ->> 'usertype' in ('USER', 'user', 'customer', 'CUSTOMER')
