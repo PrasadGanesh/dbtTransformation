@@ -1,0 +1,1 @@
+SELECT (_airbyte_data ->> 'isoDate')::DATE as date, _airbyte_data ->> 'actionByUserId' as actionByUserId, _airbyte_data ->> 'actionOnUserId' as actionOnUserId, _airbyte_data ->> 'isMatched' as matched, _airbyte_data ->> 'matchId_aibyte_transform' as matchId from _airbyte_raw_userresponselogs where _airbyte_data ->> 'responseType' in ('1', '2')
